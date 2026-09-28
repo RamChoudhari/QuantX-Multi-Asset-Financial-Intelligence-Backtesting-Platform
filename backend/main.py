@@ -11,9 +11,9 @@ import yfinance as yf
 import requests
 
 app = FastAPI(
-    title="QUANTEXA Market & Quantitative AI Intelligence API",
+    title="QUANTORA Market & Quantitative AI Intelligence API",
     version="2.0.0",
-    description="Backend quantitative market engine and Featherless AI analyst integration for QUANTEXA terminal"
+    description="Backend quantitative market engine and Featherless AI analyst integration for QUANTORA terminal"
 )
 
 # Enable CORS for local dev servers and LAN hosts
@@ -176,7 +176,7 @@ def generate_fallback_history(symbol: str, count: int = 250) -> pd.DataFrame:
 def read_root():
     return {
         "status": "online",
-        "platform": "QUANTEXA Financial Terminal API",
+        "platform": "QUANTORA Financial Terminal API",
         "endpoints": [
             "GET /market/{symbol}",
             "POST /ai/analyze"
@@ -303,7 +303,7 @@ def generate_analytical_fallback(question: str, symbol: str, ctx: Dict[str, Any]
             f"1. **Asymmetric Growth vs Safe-Haven Dynamics:** Bitcoin ({ctx.get('btc_return', '+124.5%')}) exhibited powerful momentum and monetary liquidity adoption, albeit accompanied by elevated annualized volatility ({ctx.get('btc_vol', '58.2%')}). In contrast, Gold ({ctx.get('gold_return', '+28.4%')}) maintained its historical role as a low-beta wealth preserver with a conservative volatility profile ({ctx.get('gold_vol', '14.1%')}).\n"
             f"2. **Capital Efficiency & Sharpe Ratios:** NVIDIA ({ctx.get('nvda_return', '+168.2%')}) delivered an institutional Sharpe ratio above benchmark averages, propelled by secular hardware expansion, whereas Gold's Sharpe ratio reflected steady macro-hedging rather than aggressive capital appreciation.\n"
             f"3. **Diversification Implications:** The correlation matrix shows that pairing Gold's defensive characteristics with BTC/NVDA's high-beta profiles creates an optimal frontier with significantly improved Sortino ratios and reduced portfolio variance.\n\n"
-            f"*(Generated via QUANTEXA Quantitative Analytical Engine. Python calculations remain the source of truth.)*"
+            f"*(Generated via QUANTORA Quantitative Analytical Engine. Python calculations remain the source of truth.)*"
         )
 
     if "volatil" in q_lower:
@@ -327,7 +327,7 @@ def generate_analytical_fallback(question: str, symbol: str, ctx: Dict[str, Any]
 
     # General / Market Performance explanation
     return (
-        f"**QUANTEXA Market Analysis for {sym_name} ({symbol}):**\n\n"
+        f"**QUANTORA Market Analysis for {sym_name} ({symbol}):**\n\n"
         f"- **Latest Market Price:** ${latest_p}\n"
         f"- **Period Net Return:** {total_ret}%\n"
         f"- **Annualized Volatility:** {vol_pct}\n"
@@ -370,7 +370,7 @@ def analyze_with_featherless(req: AIAnalyzeRequest):
     # If Featherless API key is present in environment, call Featherless
     if FEATHERLESS_API_KEY and len(FEATHERLESS_API_KEY.strip()) > 5:
         system_instruction = (
-            "You are QUANTEXA AI Analyst. Explain supplied quantitative financial results clearly. "
+            "You are QUANTORA AI Analyst. Explain supplied quantitative financial results clearly. "
             "Never invent numerical values. If a metric is unavailable, explicitly say that it is unavailable. "
             "Python calculations are the source of truth. Provide concise, professional financial analysis."
         )
@@ -426,15 +426,15 @@ Please provide an institutional-grade quantitative explanation based on these ex
     is_demo = not bool(FEATHERLESS_API_KEY)
     
     note = (
-        "\n\n> ℹ️ *[QUANTEXA AI Demo Mode — Key `FEATHERLESS_API_KEY` not configured in backend environment. "
+        "\n\n> ℹ️ *[QUANTORA AI Demo Mode — Key `FEATHERLESS_API_KEY` not configured in backend environment. "
         "Showing deterministic Python quantitative analysis. Add FEATHERLESS_API_KEY to enable live Featherless LLM inference.]*"
         if is_demo else ""
     )
 
     return {
         "answer": fallback_text + note,
-        "model": "quantexa-analytical-engine-v2",
+        "model": "quantora-analytical-engine-v2",
         "is_demo": is_demo,
-        "provider": "QUANTEXA Internal Quantitative Engine",
+        "provider": "QUANTORA Internal Quantitative Engine",
         "context": context
     }

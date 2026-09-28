@@ -20,19 +20,19 @@ export const Navbar: React.FC = () => {
         {/* Brand */}
         <div className="flex items-center gap-3">
           <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-slate-900 to-[#0b1324] border border-cyan-500/30 shadow-lg shadow-cyan-500/10">
-            <img src="/logo.svg" alt="QuantLens Logo" className="w-7 h-7" />
+            <img src="/logo.svg" alt="QUANTORA Logo" className="w-7 h-7" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
-                QUAN<span className="text-cyan-400">TEXA</span>
+                QUAN<span className="text-cyan-400">TORA</span>
               </h1>
               <span className="text-[10px] uppercase font-mono-numeric font-semibold px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
                 3D TERMINAL
               </span>
             </div>
             <p className="text-[11px] text-slate-400 hidden sm:block">
-              Quantitative Multi-Asset Financial Intelligence & AI Backtesting Platform
+              Quantitative Financial Intelligence Terminal
             </p>
           </div>
         </div>

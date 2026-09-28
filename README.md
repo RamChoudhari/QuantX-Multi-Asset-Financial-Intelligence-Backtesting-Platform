@@ -1,4 +1,4 @@
-# QUANTEXA — 3D Quantitative Multi-Asset Financial Intelligence & Systematic Backtesting Terminal
+# QUANTORA — 3D Quantitative Multi-Asset Financial Intelligence & Systematic Backtesting Terminal
 
 [![React](https://img.shields.io/badge/React-19.2-cyan.svg)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-blue.svg)](https://www.typescriptlang.org/)
@@ -8,16 +8,16 @@
 [![Python](https://img.shields.io/badge/Python-3.11+-yellow.svg)](https://www.python.org/)
 [![Featherless AI](https://img.shields.io/badge/Featherless%20AI-Ready-orange.svg)](https://featherless.ai/)
 
-**QUANTEXA** is an institutional-grade quantitative financial intelligence and systematic backtesting research terminal. Built with an interactive **Three.js WebGL 3D Market Universe**, a Python **FastAPI quantitative analytics engine**, real **yfinance market data**, and an integrated **QUANTEXA AI Analyst Assistant** powered by **Featherless AI**, QUANTEXA empowers researchers, quantitative analysts, and algorithmic traders to analyze multi-asset dynamics, test systematic alpha strategies with zero look-ahead bias, and evaluate risk across historical market regimes.
+**QUANTORA** is an institutional-grade quantitative financial intelligence and systematic backtesting research terminal. Built with an interactive **Three.js WebGL 3D Market Universe**, a Python **FastAPI quantitative analytics engine**, real **yfinance market data**, and an integrated **QUANTORA AI Analyst Assistant** powered by **Featherless AI**, QUANTORA empowers researchers, quantitative analysts, and algorithmic traders to analyze multi-asset dynamics, test systematic alpha strategies with zero look-ahead bias, and evaluate risk across historical market regimes.
 
 ---
 
 ## 🎯 What the Project Does
 
-QUANTEXA enables researchers to:
+QUANTORA enables researchers to:
 1. **Analyze Key Macro Assets**: Track real market performance, volatility, and drawdowns for **Gold** (`GC=F`), **Bitcoin** (`BTC-USD`), and **NVIDIA** (`NVDA`).
 2. **Visualize Cross-Asset Dynamics in Real 3D**: Explore market correlations and asset dispersion in a hardware-optimized WebGL 3D orbital universe.
-3. **Consult QUANTEXA AI Analyst**: Ask natural language financial research questions answered by Featherless AI (or the local analytical engine), grounded strictly in Python calculations.
+3. **Consult QUANTORA AI Analyst**: Ask natural language financial research questions answered by Featherless AI (or the local analytical engine), grounded strictly in Python calculations.
 4. **Conduct Systematic Backtesting**: Simulate trading strategies with strict execution discipline (signals generated at bar $t$ close $\rightarrow$ executed at bar $t+1$ open) and realistic frictions (basis-point commissions and adverse slippage).
 5. **Evaluate Model Robustness**: Detect curve-fitting traps via 2D parameter heatmaps, cost-drag stress testing (0–100 bps), 70/30 in-sample vs out-of-sample splits, and a composite robustness scorecard.
 6. **Classify Market Regimes**: Segment market history into Bull, Bear, High Volatility, and Low Volatility states to analyze strategy suitability under shifting macro regimes.
@@ -28,13 +28,13 @@ QUANTEXA enables researchers to:
 
 ### 1. Interactive 3D Market Universe (`MarketUniverse3D`)
 - Built with **Three.js**, **React Three Fiber**, and **@react-three/drei**.
-- Features an illuminated central **QUANTEXA Core** with rotating concentric orbital rings and ambient particle dust.
+- Features an illuminated central **QUANTORA Core** with rotating concentric orbital rings and ambient particle dust.
 - 3 interactive 3D nodes for **Gold**, **Bitcoin**, and **NVIDIA** with real-time price overlays, glowing materials, and selection halos.
 - Interactive mouse/touch rotation, zoom controls, and smooth damping.
 - Synchronized with the entire dashboard: selecting an asset in 3D updates its card, focuses the performance chart, and switches the AI Analyst context.
 - Laptop-optimized with prefers-reduced-motion support and an automated 2D fallback.
 
-### 2. QUANTEXA AI Analyst (`AIAnalyst`)
+### 2. QUANTORA AI Analyst (`AIAnalyst`)
 - Integrated financial research assistant panel connected to the FastAPI backend at `POST /ai/analyze`.
 - Formulates structured financial context (latest price, period return, volatility, Sharpe, max drawdown) calculated strictly by the Python engine.
 - Supports **Featherless AI** cloud models (e.g. `meta-llama/Meta-Llama-3.1-8B-Instruct`) via backend environment variables.
@@ -90,8 +90,8 @@ QUANTEXA enables researchers to:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/quantexa.git
-cd quantexa
+git clone https://github.com/<your-username>/quantora.git
+cd quantora
 ```
 
 ### 2. Set Up and Run the Python Backend
@@ -139,10 +139,10 @@ npm run dev -- --host 0.0.0.0 --port 5188
 Follow this 5-step walkthrough to experience the full terminal capabilities:
 
 1. **Explore the 3D Market Universe**:
-   - On the **Overview** dashboard, drag with your mouse/touch to rotate the camera around the glowing **QUANTEXA Core**.
+   - On the **Overview** dashboard, drag with your mouse/touch to rotate the camera around the glowing **QUANTORA Core**.
    - Scroll to zoom in and observe the orbital rings and data particles.
    - Click the **Bitcoin** node: notice how Bitcoin is highlighted in 3D, the Bitcoin asset card is focused, the performance chart isolates BTC, and the AI Analyst switches focus to `BTC-USD`.
-2. **Consult the QUANTEXA AI Analyst**:
+2. **Consult the QUANTORA AI Analyst**:
    - In the right-hand panel, click the suggestion chip: *"Why did Bitcoin outperform Gold?"*.
    - The question is dispatched to the backend at `POST /ai/analyze`.
    - The AI returns an explanation grounded in actual Python-calculated returns, volatility, and Sharpe ratios.
@@ -182,4 +182,4 @@ The platform runs 100% out-of-the-box with built-in analytical fallbacks. To act
 
 ## ⚖️ Educational Disclaimer
 
-*Historical analysis and algorithmic simulations are for educational and research purposes only. Past performance does not guarantee future results. QUANTEXA does not provide investment, financial, or trading advice.*
+*Historical analysis and algorithmic simulations are for educational and research purposes only. Past performance does not guarantee future results. QUANTORA does not provide investment, financial, or trading advice.*

@@ -51,10 +51,10 @@ export const AIAnalyst: React.FC<AIAnalystProps> = ({
     {
       id: 'initial',
       sender: 'assistant',
-      content: `**QUANTEXA AI Analyst initialized.**\n\nI am connected to the Python quantitative analytics engine. Focus asset is **${activeAssetName}** (\`${backendSymbol}\`).\n\nAsk any question about risk-adjusted returns, historical drawdown, volatility dispersion, or cross-asset correlation.`,
+      content: `**QUANTORA AI Analyst initialized.**\n\nI am connected to the Python quantitative analytics engine. Focus asset is **${activeAssetName}** (\`${backendSymbol}\`).\n\nAsk any question about risk-adjusted returns, historical drawdown, volatility dispersion, or cross-asset correlation.`,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       isDemo: true,
-      model: 'quantexa-engine-v2',
+      model: 'quantora-engine-v2',
     },
   ]);
 
@@ -132,7 +132,7 @@ export const AIAnalyst: React.FC<AIAnalystProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-sm text-white tracking-wide">QUANTEXA AI ANALYST</span>
+              <span className="font-bold text-sm text-white tracking-wide">QUANTORA AI ANALYST</span>
               <span className="flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Ready
@@ -191,7 +191,7 @@ export const AIAnalyst: React.FC<AIAnalystProps> = ({
                   <div className="flex items-center justify-between gap-2 pb-1.5 mb-1.5 border-b border-slate-800/80 text-[10px] text-slate-400">
                     <span className="font-mono text-cyan-400 font-semibold flex items-center gap-1">
                       <Cpu className="w-3 h-3" />
-                      {msg.model || 'QUANTEXA Research Agent'}
+                      {msg.model || 'QUANTORA Research Agent'}
                     </span>
                     <button
                       onClick={() => copyToClipboard(msg.content, msg.id)}
@@ -255,7 +255,7 @@ export const AIAnalyst: React.FC<AIAnalystProps> = ({
             value={inputQuery}
             onChange={e => setInputQuery(e.target.value)}
             disabled={loading}
-            placeholder="Ask QUANTEXA anything about the selected market..."
+            placeholder="Ask QUANTORA anything about the selected market..."
             className="flex-1 bg-slate-900/90 border border-slate-700/80 focus:border-cyan-400 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-500/30 transition-all font-sans"
           />
           <button

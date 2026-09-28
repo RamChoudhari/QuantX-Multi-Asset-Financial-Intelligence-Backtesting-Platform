@@ -1,5 +1,5 @@
 /**
- * QUANTEXA Market & AI Backend API Client
+ * QUANTORA Market & AI Backend API Client
  * Connects directly to the FastAPI backend with multi-tier fallback.
  */
 
@@ -189,9 +189,9 @@ export async function sendAIQuestion(
         const data = await res.json();
         return {
           answer: data.answer || 'No analysis generated.',
-          model: data.model || 'quantexa-analyst',
+          model: data.model || 'quantora-analyst',
           is_demo: Boolean(data.is_demo),
-          provider: data.provider || 'QUANTEXA Engine',
+          provider: data.provider || 'QUANTORA Engine',
           context: data.context,
         };
       }
@@ -202,7 +202,7 @@ export async function sendAIQuestion(
 
   return {
     answer:
-      'QUANTEXA AI Analyst temporarily unavailable. Please verify the FastAPI backend is active on port 8000. Real-time market metrics remain active and updated via Python analytics.',
+      'QUANTORA AI Analyst temporarily unavailable. Please verify the FastAPI backend is active on port 8000. Real-time market metrics remain active and updated via Python analytics.',
     model: 'offline-fallback',
     is_demo: true,
     error: 'Network connection failed',

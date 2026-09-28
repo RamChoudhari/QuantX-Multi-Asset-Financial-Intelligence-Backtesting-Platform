@@ -273,8 +273,8 @@ const DataParticles: React.FC<{ count?: number }> = ({ count = 180 }) => {
   );
 };
 
-// Central QUANTEXA Orb Core
-const CentralQuantexaCore: React.FC<{ reducedMotion: boolean }> = ({ reducedMotion }) => {
+// Central QUANTORA Orb Core
+const CentralQuantoraCore: React.FC<{ reducedMotion: boolean }> = ({ reducedMotion }) => {
   const innerRef = useRef<THREE.Mesh>(null);
   const wireRef = useRef<THREE.Mesh>(null);
 
@@ -321,7 +321,7 @@ const CentralQuantexaCore: React.FC<{ reducedMotion: boolean }> = ({ reducedMoti
       {/* Central Core Label */}
       <Html position={[0, -2.2, 0]} center distanceFactor={14}>
         <div className="px-2.5 py-1 rounded-full bg-slate-950/80 border border-cyan-500/30 backdrop-blur-sm text-[10px] font-mono tracking-widest text-cyan-400 font-bold uppercase shadow-lg shadow-cyan-950/50 select-none">
-          QUANTEXA CORE
+          QUANTORA CORE
         </div>
       </Html>
     </group>
@@ -475,7 +475,7 @@ export const MarketUniverse3D: React.FC<MarketUniverse3DProps> = ({
         />
 
         {/* Central Orb & Orbit Rings */}
-        <CentralQuantexaCore reducedMotion={reducedMotion} />
+        <CentralQuantoraCore reducedMotion={reducedMotion} />
         <OrbitRing radius={4.8} color="#eab308" opacity={0.2} />
         <OrbitRing radius={7.2} color="#f97316" opacity={0.2} />
         <OrbitRing radius={9.8} color="#06b6d4" opacity={0.2} />
